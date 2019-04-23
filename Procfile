@@ -1,1 +1,1 @@
-web: gunicorn TwillioWrapper:app
+web: gunicorn src.TwillioWrapper:app --log-file=-
