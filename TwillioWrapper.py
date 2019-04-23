@@ -13,7 +13,6 @@ def twilio_heroku_app():
     msg_body = request.args.get('msg')
     
     client = Client(account_sid, auth_token)
-
     message = client.messages.create(
                                   body=msg_body,
                                   from_='whatsapp:'+sandbox_number,
@@ -21,6 +20,5 @@ def twilio_heroku_app():
                               )
 
     return message.sid
-
 if __name__ == '__main__':
     app.run()
